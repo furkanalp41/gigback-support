@@ -39,8 +39,8 @@ footer a{color:#6B767C}
 <p>You can also open <b>Help › Contact Support…</b> in the app. We usually reply within two working days.</p>
 <h2>Frequently asked questions</h2>
 <p><b>The scan found much less than I expected.</b> GigBack only lists items it can prove are recreatable, and only in folders you gave it access to. Check that your home folder is listed in Settings › Roots, and that you allowed Desktop, Documents and Downloads when macOS asked (System Settings › Privacy &amp; Security › Files and Folders › GigBack). Some categories, such as build outputs (<code>dist</code>, <code>out</code>, <code>coverage</code>), are off by default; turn them on in Settings › Rules.</p>
-<p><b>I reclaimed space but my free space didn't change.</b> Items go to the Trash by default. Space is freed when you empty the Trash, either with the Empty Trash button on the result screen or in Finder with Shift-Command-Delete.</p>
-<p><b>macOS asks whether GigBack may control Finder.</b> That prompt appears only when you press Empty Trash. GigBack sends Finder a single "empty the Trash" command. If you'd rather not allow it, choose Don't Allow and empty the Trash in Finder yourself. You can change this later in System Settings › Privacy &amp; Security › Automation.</p>
+<p><b>I reclaimed space but my free space didn't change.</b> Items go to the Trash by default. Space is freed when you empty the Trash in Finder, with Shift-Command-Delete or Finder's Empty button. GigBack cannot empty the Trash for you: a sandboxed Mac App Store app is not allowed to command Finder.</p>
+
 <p><b>Why do Homebrew and Docker items only offer a command to copy?</b> The Mac App Store version runs in Apple's sandbox, which doesn't allow starting Homebrew or Docker. Copy the command and run it in Terminal.</p>
 <p><b>A simulator can't be selected.</b> Simulators that are running (booted) are protected. Shut the simulator down and scan again.</p>
 <p><b>Something shows up that I want to keep.</b> Select it and click Exclude… in the inspector. Excluded paths are listed in Settings › Exclusions, where you can remove them again.</p>
@@ -52,7 +52,7 @@ footer a{color:#6B767C}
 <p>In Terminal the same reset is:</p>
 <pre><code>osascript -e &#x27;quit app &quot;GigBack&quot;&#x27;
 rm -rf ~/Library/Containers/com.gigback.GigBack</code></pre>
-<p>To revoke permissions as well, remove GigBack under System Settings › Privacy &amp; Security › Files and Folders and › Automation.</p>
+<p>To revoke permissions as well, remove GigBack under System Settings › Privacy &amp; Security › Files and Folders.</p>
 <p><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="index.html">Türkçe</a></p>
 <hr>
 <h1>Destek (Türkçe)</h1>
@@ -61,8 +61,8 @@ rm -rf ~/Library/Containers/com.gigback.GigBack</code></pre>
 <p>Uygulamada <b>Yardım › Destekle İletişime Geç…</b> menüsünü de kullanabilirsin. Genellikle iki iş günü içinde yanıt veririz.</p>
 <h3>Sık sorulan sorular</h3>
 <p><b>Tarama beklediğimden çok daha az şey buldu.</b> GigBack yalnızca yeniden oluşturulabildiğini kanıtlayabildiği öğeleri, yalnızca erişim verdiğin klasörlerde listeler. Ev klasörünün Ayarlar › Kökler'de göründüğünü ve macOS sorduğunda Masaüstü, Belgeler ve İndirilenler'e izin verdiğini kontrol et (Sistem Ayarları › Gizlilik ve Güvenlik › Dosyalar ve Klasörler › GigBack). Derleme çıktıları (<code>dist</code>, <code>out</code>, <code>coverage</code>) gibi bazı kategoriler varsayılan olarak kapalıdır; Ayarlar › Kurallar'dan açabilirsin.</p>
-<p><b>Yer açtım ama boş alanım değişmedi.</b> Öğeler varsayılan olarak Çöp Sepeti'ne gider. Alan, Çöp Sepeti'ni boşalttığında açılır: sonuç ekranındaki Çöp Sepeti'ni boşalt düğmesiyle ya da Finder'da Shift-Command-Delete ile.</p>
-<p><b>macOS, GigBack'in Finder'ı denetlemesine izin verip vermeyeceğimi soruyor.</b> Bu istem yalnızca Çöp Sepeti'ni boşalt'a bastığında çıkar. GigBack, Finder'a tek bir "Çöp Sepeti'ni boşalt" komutu gönderir. İzin vermek istemezsen İzin Verme'yi seç ve Çöp Sepeti'ni Finder'dan kendin boşalt. Bunu daha sonra Sistem Ayarları › Gizlilik ve Güvenlik › Otomasyon'dan değiştirebilirsin.</p>
+<p><b>Yer açtım ama boş alanım değişmedi.</b> Öğeler varsayılan olarak Çöp Sepeti'ne gider. Alan, Çöp Sepeti'ni Finder'da boşalttığında açılır: Shift-Command-Delete ile ya da Finder'ın Boşalt düğmesiyle. GigBack Çöp Sepeti'ni senin yerine boşaltamaz; sandbox'ta çalışan bir Mac App Store uygulamasının Finder'a komut vermesine izin yok.</p>
+
 <p><b>Homebrew ve Docker öğeleri neden yalnızca kopyalanacak bir komut sunuyor?</b> Mac App Store sürümü Apple'ın sandbox'ında çalışır; sandbox Homebrew ya da Docker'ı başlatmaya izin vermez. Komutu kopyala ve Terminal'de çalıştır.</p>
 <p><b>Bir simülatörü seçemiyorum.</b> Çalışan (açık) simülatörler korunur. Simülatörü kapat ve yeniden tara.</p>
 <p><b>Saklamak istediğim bir şey listede çıkıyor.</b> Seç ve inceleme panelinde Hariç tut…'a tıkla. Hariç tutulan yollar Ayarlar › Hariç Tutulanlar'da listelenir; oradan geri kaldırabilirsin.</p>
@@ -74,7 +74,7 @@ rm -rf ~/Library/Containers/com.gigback.GigBack</code></pre>
 <p>Aynı sıfırlama Terminal'de:</p>
 <pre><code>osascript -e &#x27;quit app &quot;GigBack&quot;&#x27;
 rm -rf ~/Library/Containers/com.gigback.GigBack</code></pre>
-<p>İzinleri de geri almak için Sistem Ayarları › Gizlilik ve Güvenlik › Dosyalar ve Klasörler ile Otomasyon bölümlerinden GigBack'i kaldır.</p>
+<p>İzinleri de geri almak için Sistem Ayarları › Gizlilik ve Güvenlik › Dosyalar ve Klasörler bölümünden GigBack'i kaldır.</p>
 <p><a href="index.html">Ana sayfa</a> · <a href="privacy.html">Gizlilik</a> · <a href="index.html">English</a></p>
 <footer><a href="index.html">Support</a> · <a href="privacy.html">Privacy Policy</a> · <a href="privacy.html">Privacy</a> · GigBack for macOS · © 2026 Furkan Alp Günay</footer>
 </main></body></html>
